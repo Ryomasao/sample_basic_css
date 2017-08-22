@@ -1,0 +1,20 @@
+@mycolor:yellow;
+
+body{
+ font-family: "Mplus 1p";
+}
+
+hr.border{
+background-color: #fff;
+border-top: 2px dashed #8c8b8b;
+}
+
+.block1{
+ background:@mycolor;
+}    
+
+.block2{
+ &:extend(.block1);
+ width:500px;
+}    
+

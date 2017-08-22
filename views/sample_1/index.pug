@@ -1,0 +1,53 @@
+extends ../sample_common/layout
+
+block meta
+  //フォントだけ！フォントだけかえさせてけろ！だいぶ印象がかわる。
+  link(href="https://fonts.googleapis.com/earlyaccess/mplus1p.css",rel="stylesheet")
+  //cssはlessを使ってみる。ここでは、クライアント変換方式で、ブラウザがless.min.jsをもとにstyle.lessをcssに変換する。
+  link(rel="stylesheet/less",type="text/css",href="../stylesheets/less/sample/style.less")
+  script(src="../javascripts/less.min.js")
+
+block content
+  h1= title
+
+  h3: a(href="http://ja.learnlayout.com/no-layout.html") 参考サイト:CSSレイアウトを学ぶ
+  p ここに書いてあるものは、上記参考サイトのmax-widthまでの項をベースにいろいろ試している。
+  p 参考サイトのほうが見やすく抜群にわかりやすい。ここは、参考サイトを見た上での自由帳である。
+  p ブラウザはChromeでdeveloperToolを開きながら見たほうがいいと思う。
+  p スマートフォンでは、何の設定もしてないので、このページは見にくいはず。
+
+  hr
+  h2 前提
+  p すべての要素は、以下いずれかのdisplayプロパティを持っている。
+    ul
+      li block
+      li inile
+      li none
+  h3 block
+  p 大抵の要素は、このblock要素。divとか、pとかh1とか全部これ。
+
+  h4 特徴
+  ul 
+    li 新しい行に配置される
+    li ブラウザサイズに応じて可能かぎり横に広がる
+
+  hr.border
+
+  h5 block1:初歩
+  div.block1 これはblock要素。横幅いっぱいに広がる。わかりやすく背景に色をつけてる。
+
+
+  hr.border
+  h5 block2:width:500px
+  p block要素にwidthを設定することで、横幅を自在に決めることができる。
+  div.block2 blockにwidth:500pxを設定した。
+
+  p 左端から500pxなんだね。
+
+  hr.border
+
+  
+
+  
+  
+
