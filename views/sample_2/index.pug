@@ -1,0 +1,195 @@
+extends ../sample_common/layout
+
+block meta
+  //フォントだけ！フォントだけかえさせてけろ！だいぶ印象がかわる。
+  link(href="https://fonts.googleapis.com/earlyaccess/mplus1p.css",rel="stylesheet")
+  //cssはlessを使ってみる。ここでは、クライアント変換方式で、ブラウザがless.min.jsをもとにstyle.lessをcssに変換する。
+  script(src="../javascripts/less.min.js")
+
+block style
+  style().
+    .box1{
+      width:500px;
+      height:500px;
+      background-color:red;
+    }
+
+    .box1-child{
+      width:100px;
+      height:100px;
+      margin:10px;
+      background-color:pink;
+    }
+
+    .btn1{
+      border:3px solid #1a1a1a;
+    }
+
+    .btn2{
+      border:3px solid #1a1a1a;
+      text-align:center;
+    }
+
+    .btn3{
+      border:3px solid #1a1a1a;
+      text-align:center;
+      display:inline-block;
+    }
+
+    .btn4{
+      border:3px solid #1a1a1a;
+      text-align:center;
+      display:inline-block;
+      padding:10px;
+    }
+    
+    .btn5{
+      border:3px solid #1a1a1a;
+      text-align:center;
+      display:inline-block;
+      padding:10px;
+      border-right:0;
+    }
+
+    .btn6-right{
+      border:3px solid #1a1a1a;
+      text-align:center;
+      display:inline-block;
+      padding:10px;
+    }
+
+    .btn6-left{
+      border:3px solid #1a1a1a;
+      text-align:center;
+      display:inline-block;
+      padding:10px;
+      border-right:0;
+
+      /**/
+
+    }
+    .btn6-left:after{
+      left:100%;
+    }
+
+    .wrapper-toggle-1{
+      width:200px;
+      height:200px;
+      background-color:green;
+    }
+
+    .wrapper-toggle-2{
+      width:200px;
+      height:200px;
+      background-color:green;
+      align-items:center;
+      justify-content:center;
+      display:flex;
+    }
+
+    input[type="radio"].toggle-2{
+      display:none;
+    }
+
+    .btn-2{
+      border:3px solid #1a1a1a;
+    }
+
+    /*右側の線を消す。*/
+    input[type="radio"].toggle-2.toggle-left-2 + label {
+      border-right: 0;
+    }
+    
+
+
+block content
+  h1= title
+
+  p display inline block inline-blockを検証している。
+  p: a(src="http://taneppa.net/display-inline-block/") このサイトがわかりやすい 
+  p さて、この要素を見て欲しい。
+  div.box1 parent
+    div.box1-child child
+    div.box1-child child
+    div.box1-child child
+    div.box1-child child
+
+  p 親のblock要素の中に、子のblock要素をつっこんでいる。  
+  p 子の要素もdivでblock要素なので、当然改行されて表示される。  
+
+
+
+  p 話がかわるけれども、この要素をみてほしい。  
+  .btn1 YES
+
+  p ちょっとかっこいいよね。単純にborderを指定しているだけ。
+  p せっかくなので、textを真ん中に寄せる、text-align:centerを指定してみよう
+
+  .btn2 YES p せっかくなので、textを真ん中に寄せる、text-align:centerを指定してみよう p でも横に長い。テキストぐらいの大きさにしよう。widthを指定してもいいんだけれども、block要素をdisplay:inline-blockとすると、 .btn3 YES p なんと、inline要素っぽく「YES」の分だけ、borderが囲まれる。え、ちょっとborderと中身の要素が狭いだって？
+  p しかたない、paddingしよう。
+
+  .btn4 YES
+  
+  p 
+   |いかんじになったかな。ちなみにinline-blockは、inlineが左右にしかpaddinができない（ちょっと語弊がある)のに対し
+   |inline-blockは上下にもpaddingできるんだって。
+
+  p こんなことをしてみる。
+  .btn4 YES
+  .btn4 NO
+
+  p 線が重なっちゃって嫌な感じ。
+  p boder-right:0にして、線を消す。
+  .btn5 YES
+  .btn5 NO
+
+  p ありゃ、右の線も消えちゃった。
+
+  .btn6-left YES
+  .btn6-right NO
+
+  p 攻め方を変えよう。
+  p ここに平凡なラジオボタンがある。
+  p これをいまから素敵なトグルボタンにかえていく。
+
+  .wrapper-toggle-1
+    input#toggle-on.toggle-1.toggle-left-1(type="radio" name="toggle1" checked)
+    label.btn-1(for="toggle-on") YES
+    input#toggle-off.toggle-1.toggle-right-1(type="radio" name="toggle1")
+    label.btn-1(for="toggle-off") NO
+
+  p 中央寄せはflexでやる時代なんだ。(適当)
+
+  .wrapper-toggle-2
+    input#toggle-on.toggle-1.toggle-left-1(type="radio" name="toggle2" checked)
+    label.btn-1(for="toggle-on") YES
+    input#toggle-off.toggle-1.toggle-right-1(type="radio" name="toggle2")
+    label.btn-1(for="toggle-off") NO
+
+  p きったねえ○ボタンなんて取っちまえ。
+
+  .wrapper-toggle-2
+    input#toggle-on.toggle-2.toggle-left-1(type="radio" name="toggle3" checked)
+    label.btn-1(for="toggle-on") YES
+    input#toggle-off.toggle-2.toggle-right-1(type="radio" name="toggle3")
+    label.btn-1(for="toggle-off") NO
+
+  p さみしいから線でも引いておくか。
+
+  .wrapper-toggle-2
+    input#toggle-on.toggle-2.toggle-left-1(type="radio" name="toggle4" checked)
+    label.btn-2(for="toggle-on") YES
+    input#toggle-off.toggle-2.toggle-right-1(type="radio" name="toggle4")
+    label.btn-2(for="toggle-off") NO
+
+
+  p 線が重なった。toggleの左側要素の右側の線だけ消すか。
+
+  .wrapper-toggle-2
+    input#toggle-on.toggle-2.toggle-left-2(type="radio" name="toggle5" checked)
+    label.btn-2(for="toggle-on") YES
+    input#toggle-off.toggle-2.toggle-right-2(type="radio" name="toggle5")
+    label.btn-2(for="toggle-off") NO
+
+
+  
