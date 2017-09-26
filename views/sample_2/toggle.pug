@@ -1,0 +1,133 @@
+extends ../sample_common/layout
+
+block meta
+  //フォントだけ！フォントだけかえさせてけろ！だいぶ印象がかわる。
+  link(href="https://fonts.googleapis.com/earlyaccess/mplus1p.css",rel="stylesheet")
+  //cssはlessを使ってみる。ここでは、クライアント変換方式で、ブラウザがless.min.jsをもとにstyle.lessをcssに変換する。
+  script(src="../javascripts/less.min.js")
+
+block style
+  style().
+
+    .wrapper-toggle{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width:300px;
+      height:300px;
+      min-height:100%;
+      z-index:-1;
+    }
+
+    .toggle{
+      display:none;
+    }
+
+    /*ラベル全体の効果*/
+
+
+    label{
+      cursor:pointer;
+      min-width:61px;
+    }
+
+
+    /*labelの子要素としてある。*/
+    label:after{
+      background:#1a1a1a;;
+      content:"";
+      height:100%;
+      position:absolute;
+      top:0;
+      width:100%;
+      transition:left 200ms cubic-bezier(0.77, 0, 0.175, 1);
+      z-index:-1;
+    }
+
+
+    .btn{
+      border: 3px solid #1a1a1a;
+      display: inline-block;
+      padding: 10px;
+      text-align: center;
+      position: relative;
+      transition:background 600ms ease, color 600ms ease;
+    }
+
+
+    .toggle-left + label{
+      border-right:0;
+    }
+
+    .toggle-left + label:after{
+      left:100%;
+    }
+
+    .toggle-right + label{
+      margin-left:-5px;
+    }
+
+    .toggle-right + label:after{
+      left:-100%;
+    }
+
+
+    .toggle:checked + label{
+      cursor:default;
+      color:#fff;
+      transition:color 200ms;
+    }
+
+    .toggle:checked + label:after{
+      left:0;
+    }
+
+
+    .wrapper{
+    background:gray;
+    width:300px;
+    height:300px;
+    }
+
+    .yes-box{
+      border:3px solid;
+      display:inline-block;
+      padding:10px;
+      border-right:0;
+      position:relative;
+    }
+
+    .yes-box:after{
+      background-color:red;
+      content:"";
+      width:100%;
+      height:100%;
+      top:0;
+      position:absolute;
+    }
+
+    .yes-box:after{
+      left:0%;
+    }
+
+
+
+    .no-box{
+      border:3px solid;
+      display:inline-block;
+      padding:10px;
+    }
+
+
+block content
+  h1= title
+
+  .wrapper-toggle
+    input#toggle-on.toggle.toggle-left(type="radio" name="toggle" checked)
+    label.btn(for="toggle-on") YES
+    input#toggle-off.toggle.toggle-right(type="radio" name="toggle")
+    label.btn(for="toggle-off") NO
+
+  .wrapper
+    .yes-box Yes
+    .no-box No

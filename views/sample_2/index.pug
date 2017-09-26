@@ -99,6 +99,27 @@ block style
     input[type="radio"].toggle-2.toggle-left-2 + label {
       border-right: 0;
     }
+
+    .btn-3{
+      border:3px solid #1a1a1a;
+      padding:10px;
+    }
+
+    /*toggle7*/
+
+    /*右側の線を消す。*/
+    input[type="radio"].toggle-3.toggle-left-2 + label {
+      border-right: 0;
+    }
+
+    input[type="radio"].toggle-3{
+      display:none;
+    }
+    input[type="radio"].toggle-3:checked + label {
+      cursor: default;
+      color: #fff;
+      transition: color 200ms;
+    }
     
 
 
@@ -191,5 +212,19 @@ block content
     input#toggle-off.toggle-2.toggle-right-2(type="radio" name="toggle5")
     label.btn-2(for="toggle-off") NO
 
+  p もうちょい広く
 
+  .wrapper-toggle-2
+    input#toggle-on.toggle-2.toggle-left-2(type="radio" name="toggle6" checked)
+    label.btn-3(for="toggle-on") YES
+    input#toggle-off.toggle-2.toggle-right-2(type="radio" name="toggle6")
+    label.btn-3(for="toggle-off") NO
+
+  p checkがついているほうになんかこう
+
+  .wrapper-toggle-2
+    input#toggle-on.toggle-3.toggle-left-2(type="radio" name="toggle7" checked)
+    label.btn-3(for="toggle-on") YES
+    input#toggle-off.toggle-3.toggle-right-2(type="radio" name="toggle7")
+    label.btn-3(for="toggle-off") NO
   
