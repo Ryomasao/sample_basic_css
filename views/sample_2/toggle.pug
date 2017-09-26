@@ -84,9 +84,15 @@ block style
 
 
     .wrapper{
+    /*
+    wrpaeer要素にrelative(static以外)を指定するとスタック文脈がかわって、z-indexがうまくいくみたい。
+    https://app.codegrid.net/entry/z-index-1 
+    */
+    position:relative;
     background:gray;
     width:300px;
     height:300px;
+    z-index:-1;
     }
 
     .yes-box{
@@ -107,7 +113,22 @@ block style
     }
 
     .yes-box:after{
-      left:0%;
+      left:100%;
+      z-index:-1;
+    }
+
+    /*
+    .yes-text{
+      color:white;
+    }
+    */
+
+    .no-text{
+      color:white;
+    }
+
+    .no-text{
+      color:white;
     }
 
 
@@ -129,5 +150,7 @@ block content
     label.btn(for="toggle-off") NO
 
   .wrapper
-    .yes-box Yes
-    .no-box No
+    .yes-box 
+      .yes-text Yes
+    .no-box 
+      .no-text No
