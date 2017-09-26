@@ -3,8 +3,8 @@ extends ../sample_common/layout
 block meta
   //フォントだけ！フォントだけかえさせてけろ！だいぶ印象がかわる。
   link(href="https://fonts.googleapis.com/earlyaccess/mplus1p.css",rel="stylesheet")
-  //cssはlessを使ってみる。ここでは、クライアント変換方式で、ブラウザがless.min.jsをもとにstyle.lessをcssに変換する。
-  script(src="../javascripts/less.min.js")
+  //個別のjavascirptだけろねぇ
+  script(src="../../javascripts/toggle.js")
 
 block style
   style().
@@ -113,7 +113,7 @@ block style
     }
 
     .yes-box:after{
-      left:100%;
+      left:0%;
       z-index:-1;
     }
 
@@ -127,16 +127,99 @@ block style
       color:white;
     }
 
-    .no-text{
-      color:white;
-    }
-
-
 
     .no-box{
       border:3px solid;
       display:inline-block;
       padding:10px;
+    }
+
+
+    .wrapper2{
+    /*
+    wrpaeer要素にrelative(static以外)を指定するとスタック文脈がかわって、z-indexがうまくいくみたい。
+    https://app.codegrid.net/entry/z-index-1 
+    */
+    position:relative;
+    background:gray;
+    width:300px;
+    height:300px;
+    z-index:-1;
+    }
+
+    .black-box{
+      width:300px;
+      height:300px;
+      background-color:black;
+    }
+
+    .color-wrapper{
+      position:relative;
+      width:360px;
+      height:360px;
+      background-color:yellow;
+    }
+
+    .blue-box{
+      position:absolute;
+      width:300px;
+      height:300px;
+      background-color:blue;
+      z-index:1
+    }
+
+    .red-box{
+      position:absolute;
+      top:30px;
+      left:30px;
+      width:300px;
+      height:300px;
+      background-color:red;
+      z-index:2
+    }
+
+    .green-box{
+      position:absolute;
+      top:60px;
+      left:60px;
+      width:300px;
+      height:300px;
+      background-color:green;
+      z-index:3
+    }
+
+    .new-wrapper{
+      position:relative;
+      width:400px;
+      height:400px;
+    }
+
+    .new-yes-box{
+      border:3px solid;
+      border-right:0;
+      text-align:center;
+      display:inline-block;
+      width:150px;
+      height:150px;
+      position:relative;
+    }
+
+    .new-yes-box:after{
+      background-color:red;
+      content:"";
+      width:100%;
+      height:100%;
+      position:absolute;
+      top:0;
+      left:100%;
+    }
+
+    .new-no-box{
+      border:3px solid;
+      width:150px;
+      height:150px;
+      text-align:center;
+      display:inline-block;
     }
 
 
@@ -150,7 +233,33 @@ block content
     label.btn(for="toggle-off") NO
 
   .wrapper
-    .yes-box 
+    .yes-box
       .yes-text Yes
     .no-box 
       .no-text No
+
+
+  br
+
+  .black-box
+
+  br
+
+  .color-wrapper
+    .blue-box
+    .red-box
+    .green-box
+
+
+  br
+
+  .new-wrapper
+    .new-yes-box Yes
+    .new-no-box No
+
+
+
+  
+  
+
+
