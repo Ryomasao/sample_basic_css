@@ -204,6 +204,7 @@ block style
       position:relative;
     }
 
+    /*
     .new-yes-box:after{
       background-color:red;
       content:"";
@@ -213,6 +214,7 @@ block style
       top:0;
       left:100%;
     }
+    */
 
     .new-no-box{
       border:3px solid;
@@ -222,9 +224,32 @@ block style
       display:inline-block;
     }
 
+    .new-toggle{
+      display:none;
+    }
+
+    .new-label{
+      position:relative;
+      display:inline-block;
+      border:solid 3px;
+      padding:10px;
+    }
+
+    #new-left-label{
+      border-right:0;
+    }
+
+    input[type="radio"].new-toggle:checked + .new-label{
+      background-color:red;
+    }
+
+
 
 block content
   h1= title
+
+  h1 このページは残念ながら,toggleやらtoggle1やら、newtoggleやらカオス状態になってしまった。
+  h1: a(href="./toggle2") 新しいページをこちらに用意した。
 
   .wrapper-toggle
     input#toggle-on.toggle.toggle-left(type="radio" name="toggle" checked)
@@ -253,13 +278,40 @@ block content
 
   br
 
+  p 味気ないトグルボタンができた
+
   .new-wrapper
     .new-yes-box Yes
     .new-no-box No
 
+  p ラジオボタンを使うことで、javascriptをシンプルにすることができるはず。
 
-
+  input(type="radio" name="new-radio" value="Yes" checked ).new-toggle#toggle-yes
+  |yes
+  input(type="radio" name="new-radio" value="No").new-toggle#toggle-no
+  |no
   
+  br
+
+  p というのも、ラジオボタンはnameをあわせてあげるとグループとして扱われ、選択された要素以外のcheck状態はすべてfalseにしてくれるから。
+  p わざわざ、一方の色を消すとかいうのやらなくて済むんだね。
+
+  input.for-radio-button(type="button" value="Try" onclick="forRadioButton()")
+
+  br
+  br
+  br
+  br
+
+
+  input(type="radio" name="new-radio2" value="Yes" checked ).new-toggle#toggle-yes
+  label.new-label#new-left-label Yes
+  input(type="radio" name="new-radio2" value="No").new-toggle#toggle-no
+  label.new-label#new-right-label No
+  
+
+
+
   
 
 

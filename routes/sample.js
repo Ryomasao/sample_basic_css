@@ -26,7 +26,8 @@ router.get('/:sample_id/:name', function(req, res, next) {
     if(!err){
       res.send(html)
     }else{
-      res.render('sample_common/error', {title:'ページがないよ'});
+      console.log(err.stack);
+      res.render('sample_common/error',err);
     }
   });
 });

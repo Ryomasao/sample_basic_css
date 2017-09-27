@@ -1,0 +1,27 @@
+extends ../sample_common/layout
+
+block meta
+  //フォントだけ！フォントだけかえさせてけろ！だいぶ印象がかわる。
+  link(href="https://fonts.googleapis.com/earlyaccess/hannari.css",rel="stylesheet")
+  //個別のjavascirptだけろねぇ
+  script(src="../../javascripts/toggle3.js")
+  //個別のcss 
+  link(href="../../stylesheets/sample2/toggle3.css",rel="stylesheet")
+
+  meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+
+block style
+  style().
+
+
+block content
+
+  .container
+    input(type="radio" name="toggle" checked).toggle#left-toggle
+    label(for="left-toggle")#left-label うごく
+    input(type="radio" name="toggle").toggle#right-toggle
+    label(for="right-toggle")#right-label とまる
+
+
+

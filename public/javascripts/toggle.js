@@ -43,13 +43,51 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
     newYesBox.addEventListener("click", function( event ){
-        console.log("Im yes");
+        changeColor(this.style.backgroundColor,this);
     });
 
     newNoBox.addEventListener("click", function( event ){
-        console.log("Im no");
+        changeColor(this.style.backgroundColor,this);
     });
 
 
+    function changeColor(currentColor, myElement){
+       if (myElement.className == "new-yes-box"){
+           console.log("im yes box");
+           if (currentColor == ""){
+               myElement.style.backgroundColor = "red";
+               document.querySelector(".new-no-box").style.backgroundColor = "";
+           }
+       }else{
+           if (currentColor == ""){
+               myElement.style.backgroundColor = "red";
+               document.querySelector(".new-yes-box").style.backgroundColor = "";
+           }
+       }
+    };
+
+
+
+
+    
 });
+
+
+//html側から見える関数の範囲が謎
+//グローバルの場所であれば、見えるっぽい。
+function forRadioButton(){
+    var noState = document.querySelector("#toggle-no").checked;
+    var yesState = document.querySelector("#toggle-yes").checked;
+
+    console.log("noState:" + noState);
+    console.log("yesState:" + yesState);
+
+    document.querySelector("#toggle-no").checked = true;
+
+    var noState = document.querySelector("#toggle-no").checked;
+    var yesState = document.querySelector("#toggle-yes").checked;
+
+    console.log("noState:" + noState);
+    console.log("yesState:" + yesState);
+}
 

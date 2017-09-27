@@ -1,0 +1,35 @@
+extends ../sample_common/layout
+
+block meta
+  //フォントだけ！フォントだけかえさせてけろ！だいぶ印象がかわる。
+  link(href="https://fonts.googleapis.com/earlyaccess/mplus1p.css",rel="stylesheet")
+  //個別のjavascirptだけろねぇ
+  script(src="../../javascripts/toggle2.js")
+  //個別のcss 
+  link(href="../../stylesheets/sample2/toggle2.css",rel="stylesheet")
+
+
+block style
+  style().
+
+
+block content
+  h1= title
+
+  .wrapper
+    input(type="radio" name="toggle" checked).toggle#left-toggle
+    label(for="left-toggle")#left-label Yes
+    input(type="radio" name="toggle").toggle#right-toggle
+    label(for="right-toggle")#right-label No
+
+
+  p 親要素の背景が、子要素の上にきちゃう問題 
+  .parent-box
+    span.child-box aieuo
+
+  br
+  
+  .parent-box
+    .child-box aiueo
+
+
