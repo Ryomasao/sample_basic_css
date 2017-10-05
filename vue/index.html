@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="root">
+        <!-- v-for とv-modelの違いはなんだろう 
+        v-model はmodelをbindingするよってことかな。
+        v-for はfor eachかも
+        -->
+        <!--
+        <input type="text" id="input" v-model='message'>
+        --> 
+        <p>The Value of the input is {{ message }}</p>
+
+        <ul>
+            <!--
+            <li v-for='name in names'>{{name}}</li>
+            -->
+
+            <li v-for='hoge in names' v-text='hoge'></li>
+
+        </ul>
+
+        <input id="input" type="text" v-model="newNames" v-on:keyUp="addName">
+        <!--
+        <button id="button">Add Button</button>
+        -->
+        <!--
+        <button v-on:click="addName">Add Button</button>
+        -->
+        <button @click="addName">Add Button</button>
+    
+    </div>
+
+
+</body>
+    <script src="js/myvue.js"></script>
+</html>
