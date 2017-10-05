@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
+    </head>
+    <style>
+
+        .box-wrapper{
+            display: flex;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            margin:10px;
+        }
+    </style>
+    <body>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+     <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <div class="box-wrapper">
+                    <div class="box">
+                        tekitou
+                    </div>
+                    <div class="box">
+                        tekitou
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+        
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <script>
+        var mySwiper = new Swiper ('.swiper-container', {
+            effect: "slide",
+            loop: true,
+            pagination: '.swiper-pagination',
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+        })
+
+
+    </script>
+    </body>
+</html>
