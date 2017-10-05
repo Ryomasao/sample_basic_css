@@ -1,65 +1,46 @@
-section{
-    background:#fafafa;
-}
-
-
 .tabs{
-    position:relative;
-    margin:40px auto;
-    width: 800px;
+    background:#fafafa;
+    width:100%;
+    margin:45px auto 0;
 }
 
-.tabs input{
-    opacity: 0;    
-    position:absolute;
-    z-index:1000;
-    width: 120px;
-    height: 40px;
-    left:0px;
-    top:0px;
+input[type="radio"]{
+    display: none;
     cursor: pointer;
 }
 
 
-input#tab-2{
-    left:120px;
-}
-
-input#tab-3{
-    left:240px;
-}
-
-input#tab-4{
-    left:360px;
-}
-
 .tabs label{
     text-align: center;
     font-size:15px;
-    width: 150px;
-    height: 40px;
-    position: relative;
     display: inline-block;
+    padding: 1%;
 }
 
+/*
+label:not(:first-child){
+    margin-left:-7px;
+}
+*/
+
+
 .tab-label-1{
-    z-index:4;
     background: #EE4035;
 }
 
 .tab-label-2{
-    z-index:3;
     background: #F3A530;
+    margin-left:-7px;
 }
 
 .tab-label-3{
-    z-index:2;
     background: #56b949;
+    margin-left:-7px;
 }
 
 .tab-label-4{
-    z-index:1;
     background: #30499B;
+    margin-left:-7px;
 }
 
 .tabs input:checked + label{

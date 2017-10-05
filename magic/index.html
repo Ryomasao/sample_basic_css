@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!--
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 -->
@@ -36,16 +37,36 @@ crossorigin="anonymous"></script>
 
     html,body{
          font-family: "Nico Moji"; 
+         width: 100%;
+         height: 100%
     }
 
+    .header{
+        /*
+        position: fixed;
+        top:0px;
+        left:0px;
+        */
+        width: 100%;
+        height: 40px;
+        text-align: center;
+        background: greenyellow;
+        font-size:20px;
+    }
+
+
     .container{
+        width: 95%;
+        margin: 0 auto;
+        height: 100%
     }
 
     .content-wrapper{
         display: flex;
         flex-wrap: wrap;
-        width: 80%;
+        width: 100%;
         background: #fafafa;
+        min-height: 500px;
         /*
         justify-content: center;
         align-items: center;
@@ -114,21 +135,19 @@ crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="header">
-
+        ヘッダー
     </div>
-
-
 
     <div class="container">
 
         <section class="tabs">
-            <input id="tab-1" type="radio" name="radio-set" class="tab-selector1" checked/>
+            <input id="tab-1" type="radio" name="radio-set"  checked/>
             <label for="tab-1" class="tab-label-1">加盟店A</label>
-            <input id="tab-2" type="radio" name="radio-set" class="tab-selector1" checked/>
+            <input id="tab-2" type="radio" name="radio-set"/>
             <label for="tab-2" class="tab-label-2">加盟店B</label>
-            <input id="tab-3" type="radio" name="radio-set" class="tab-selector1" checked/>
+            <input id="tab-3" type="radio" name="radio-set"/>
             <label for="tab-3" class="tab-label-3">加盟店C</label>
-            <input id="tab-4" type="radio" name="radio-set" class="tab-selector1" checked/>
+            <input id="tab-4" type="radio" name="radio-set"/>
             <label for="tab-4" class="tab-label-4">加盟店D</label>
         </section>
     
