@@ -10,8 +10,9 @@
 <!--Swiper:スライド-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
 <!--magic:アニメーション-->
-<link rel="stylesheet" type="text/css" href="magic.css">
-<link rel="stylesheet" type="text/css" href="mycss/mystyle.css">
+<link rel="stylesheet" type="text/css" href="css/magic.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
 
 <!--
 Swiper公式
@@ -29,16 +30,23 @@ http://idangero.us/swiper/api/#.WdXuoGi0M2w
     <!--main-->
     <div class="container">
         <!--tab-->
-        <section class="tabs">
+        <section class="tabs" id="section">
+            <!--
             <input id="tab-1" type="radio" name="radio-set"  checked/>
-            <label for="tab-1" class="tab-label-1" v-on:click="iAm">加盟店A</label>
+            <label for="tab-1" class="tab-label-1" @click="changeSlide(0)">加盟店A</label>
             <input id="tab-2" type="radio" name="radio-set"/>
-            <label for="tab-2" class="tab-label-2">加盟店B</label>
+            <label for="tab-2" class="tab-label-2" @click="changeSlide(1)">加盟店B</label>
             <input id="tab-3" type="radio" name="radio-set"/>
-            <label for="tab-3" class="tab-label-3">加盟店C</label>
+            <label for="tab-3" class="tab-label-3" @click="changeSlide(2)">加盟店C</label>
             <input id="tab-4" type="radio" name="radio-set"/>
-            <label for="tab-4" class="tab-label-4">加盟店D</label>
+            <label for="tab-4" class="tab-label-4" @click="changeSlide(3)">加盟店D</label>
+            -->
+            <!--
+            <my-component></my-component>
+            -->
+            
         </section>
+
     
 
         <!--クーポン-->
@@ -122,27 +130,14 @@ http://idangero.us/swiper/api/#.WdXuoGi0M2w
     <!--footer-->
     <div class="footer">
     </div>
+
+<!--- vue -->
+<script src="js/vue.js"></script>
+<script src="js/sample.js"></script>
+
 <script>
-        //Swiper
-        var mySwiper = new Swiper ('.swiper-container', {
-            effect: "slide",
-            loop: false,
-            pagination: '.swiper-pagination',
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            onSlideChangeEnd:function(swipe){
-                changeTabIndex(swipe.activeIndex);
-            }
-        })
 
-        function changeTabIndex(index){
-           //activeIndexはloopを有効にすると、1->2->3->4で1に戻るかと思いきや5とかになる
-           //さらにactiveIndexは1からはじまるが、配列は0からアクセスする。
-           //loopを無効にするとそんな面倒なことはおきないみたい。
-           let tab = document.querySelectorAll("input[type='radio']");
-           tab[index].checked = true;
-        }
-
+    /*
        document.addEventListener("DOMContentLoaded", function(event) {
            console.log("DOM fully loaded and parsed");
         
@@ -171,7 +166,7 @@ http://idangero.us/swiper/api/#.WdXuoGi0M2w
 
     });
 
-
+    */
 </script>
 </body>
 </html>

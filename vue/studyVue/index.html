@@ -40,6 +40,22 @@
     </div>
 
 
+    <br/>
+    <!-- インラインテンプレート-->
+    <div id="hoge">
+      <!-- v-bind でコンポーネントにデータを渡す -->
+      <!-- member-data はタグ内ではケバブケースだが、定義部ではキャメルケース -->
+      <member-tag v-for="item in list" v-bind:member-data="item"></member-tag>
+    </div>
+
+    <script type="text/x-template" id="compo-member">
+      <div>
+        <div class="name">{{memberData.name}}</div>
+        <!-- 年齢は HTML が含まれる予定なので v-html を使う -->
+        <div class="age" v-html="age"></div>
+      </div>
+    </script>
+
 </body>
     <script src="js/myvue.js"></script>
 </html>
