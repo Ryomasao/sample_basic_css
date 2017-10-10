@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css">
+    <script src="../common/vue.js"></script>
+    <title>tabs</title>
+</head>
+<style>
+
+/*
+   ul{
+       font-size: 0;
+       width: 600px;
+   } 
+
+   li{
+       display: inline-block;
+       border: 1px solid white;
+       font-size:20px;
+       background:#8FDFEF;
+       padding:5px;
+       width: 20%;
+   } 
+
+   a{
+       text-decoration: none;
+   }
+
+   #content{
+       margin: 10px;
+   }
+
+   */
+</style>
+<body>
+    <div id="root">
+        <tabs>
+            <tab name="main" :selected="true">
+                <h1>test1</h1>
+            </tab>
+
+            <tab name="about us">
+                <h1>test2</h1>
+            </tab>
+
+            <tab name="contact">
+                <h1>test3</h1>
+            </tab>
+        </tabs>
+        <!--
+        <hoge fuga="pugya" v-show="isVisible"></hoge>
+        <button @click="getChildren">push</button>
+        -->
+    </div>
+
+    <!--
+    <div id="root2">
+        <div>
+            <ul id="tabs">
+                <li><a href="#main">main</a></li>
+                <li><a href="#aboutus">about us</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+            <div id="contents">
+                <div id="content-1">
+                   おはんきー！今日は雨んきー
+                </div>
+                <div id="content-2">
+                   とうふ 
+                </div>
+                <div id="content-3">
+                   xxxxxx@gmail.com
+                </div>
+            </div>      
+        </div>
+    </div>
+-->
+</body>
+    <script src="myvue.js"></script>
+    <!--
+    <script src="pure.js"></script>
+    -->
+</html>
