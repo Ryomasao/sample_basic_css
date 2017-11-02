@@ -28,18 +28,38 @@ http://idangero.us/swiper/api/#.WdXuoGi0M2w
 
     <!--main-->
     <div class="container">
-        <!--tab-->
-        <section class="tabs">
-            <input id="tab-1" type="radio" name="radio-set"  checked/>
-            <label for="tab-1" class="tab-label-1" v-on:click="iAm">加盟店A</label>
-            <input id="tab-2" type="radio" name="radio-set"/>
-            <label for="tab-2" class="tab-label-2">加盟店B</label>
-            <input id="tab-3" type="radio" name="radio-set"/>
-            <label for="tab-3" class="tab-label-3">加盟店C</label>
-            <input id="tab-4" type="radio" name="radio-set"/>
-            <label for="tab-4" class="tab-label-4">加盟店D</label>
-        </section>
-    
+
+        <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                     <section class="tabs">
+                         <input id="tab-1" type="radio" name="radio-set"  checked/>
+                         <label for="tab-1" class="tab-label-1" v-on:click="iAm">加盟店A</label>
+                         <input id="tab-2" type="radio" name="radio-set"/>
+                         <label for="tab-2" class="tab-label-2">加盟店B</label>
+                         <input id="tab-3" type="radio" name="radio-set"/>
+                         <label for="tab-3" class="tab-label-3">加盟店C</label>
+                         <input id="tab-4" type="radio" name="radio-set"/>
+                         <label for="tab-4" class="tab-label-4">加盟店D</label>
+                     </section>
+                    </div>
+                    <div class="swiper-slide">
+                     <section class="tabs">
+                         <input id="tab-5" type="radio" name="radio-set">
+                         <label for="tab-5" class="tab-label-5" v-on:click="iAm">加盟店E</label>
+                         <input id="tab-6" type="radio" name="radio-set"/>
+                         <label for="tab-6" class="tab-label-6">加盟店F</label>
+                         <input id="tab-7" type="radio" name="radio-set"/>
+                         <label for="tab-7" class="tab-label-7">加盟店G</label>
+                         <input id="tab-8" type="radio" name="radio-set"/>
+                         <label for="tab-8" class="tab-label-8">加盟店H</label>
+                     </section>
+                    </div>
+                </div>
+                
+            </div>
 
         <!--クーポン-->
         <div class="swiper-container">

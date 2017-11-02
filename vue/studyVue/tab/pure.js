@@ -27,9 +27,78 @@ function renderContent(Index){
 }
 
 
+var buttons = document.getElementById("buttons");
+var counts = document.getElementsByClassName("count");
+//console.log(counts[0].textContent);
 
 
+//ダメな例
+/*
+for(var i = 0; i< buttons.children.length; i++){
+  buttons.children[i].addEventListener("click",function(e){
+    console.log(i);
+  });
+}
+*/
 
+  /* 即時関数の書き方
+  (function(args){
+    //write code here
+  })(true args);
+  */
+
+//即時関数の例
+/*
+for(var i = 0; i< buttons.children.length; i++){
+  (function(n){
+    buttons.children[n].addEventListener("click",function(e){
+    console.log(n);
+    });
+  })(i);
+}
+*/
+
+/*
+//bindの例
+for(var i = 0; i< buttons.children.length; i++){
+    buttons.children[i].addEventListener("click",hello.bind(null, i));
+}
+
+function hello(index){
+  console.log(index);
+}
+*/
+
+/* 即時関数が即時すぎて*/
+/*
+for(var i = 0; i< buttons.children.length; i++){
+    buttons.children[i].addEventListener("click",(function(n){
+      console.log(n);
+    })(i)
+  )
+}
+*/
+
+//クラスがES6から使えるんだって
+/*
+class Cat{
+  constructor(name){
+    this.name = name;
+  }
+
+  name(name){
+    this.name = name;
+
+  }
+  hello(){
+    console.log(this.name);
+  }
+}
+
+var cat = new Cat("neko");
+console.log(cat.hello());
+
+*/
 
 /*
   tabs.children[i].addEventListener("click",(function(){
@@ -78,3 +147,26 @@ var div1 = new  MyDiv("div1");
 }("tarou","jirou"))
 
 */
+
+
+//Promise
+//https://qiita.com/toshihirock/items/e49b66f8685a8510bd76
+
+/*
+function asyncFunction(){
+  return new Promise(function(resolve, reject){
+    setTimeout(function(){
+      resolve('Async Hello world');
+    },16);
+  });
+}
+
+asyncFunction().then(function(value){
+  console.log(value);
+}).catch(function(error){
+  console.log(error);
+});
+*/
+
+//http://azu.github.io/promises-book/
+
